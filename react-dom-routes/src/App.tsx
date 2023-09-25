@@ -7,6 +7,10 @@ import NavBar from './assets/Components/NavBar'
 import About from './assets/Components/About'
 // import Page404 from './assets/Components/Page404'
 import User from './assets/Components/User'
+import FilterComponent from './assets/Components/Filter'
+import Achievement from './assets/Components/Achievement'
+import History from './assets/Components/History'
+import Page404 from './assets/Components/Page404'
 
 function App() {
 
@@ -20,10 +24,14 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/user/:namee' element={<User />} />
           <Route path='/contact' element={<Contact />} />
-          <Route path='/about' element={<About />} />
-          <Route path='/*' element={<Navigate to='/' />} />
-          {/* <Route path='/*' element={<Page404 />} /> */}
+          <Route path='/filter' element={<FilterComponent />} />
+          {/* <Route path='/*' element={<Navigate to='/' />} /> */}
+          <Route path='/*' element={<Page404 />} />
+          <Route path='/about/' element={<About />} >
+            <Route path='achievement' element={<Achievement />} />
+            <Route path='history' element={<History />} />
 
+          </Route>
         </Routes >
       </BrowserRouter >
     </>
